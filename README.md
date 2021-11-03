@@ -7,10 +7,13 @@
 
 #### 软件架构
 软件架构说明
-    视频编码模块      -   media_decode
-    视频码流传输模块   -   media_transfer
-    业务代码板块      -   app_develop
 
+| 模块 | 命名 |
+| --- | --- |
+|    视频编码模块  |     media_decode  |
+|    视频码流传输模块   |   media_transfer |  
+|    业务代码板块     |  app_develop  |
+ 
 
 #### 安装教程
 
