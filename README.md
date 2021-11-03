@@ -28,16 +28,10 @@
 #### 参与贡献
 
 1.  Fork 本仓库
-2.  新建 Feat_<you_name> 分支
-3.  提交代码
-4.  新建 Pull Request
+2.  切换到 develop 开发分支
+3.  开发你想开发的 modeule 请注意文件命名格式
+4.  提交代码到 develop 分支
+5.  新建 Pull Request
+6.  master 分支合并测试无误的 develop 分支(定期)
 
 
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
