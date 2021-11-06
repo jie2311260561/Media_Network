@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-
+message(STATUS "operation system is "${CMAKE_SYSTEM})
 
 if(WIN32)
     message(STATUS "Buile for Windows")
@@ -13,7 +13,10 @@ if(WIN32)
     include_directories(${SDL2_DIR}/include)
 
     link_directories(${SDL2_DIR}/bin)
-
+elseif(UNIX)
+    message(STATUS "Build for Unix")
+    
+    
 endif()
 
 project(Media_Network)
