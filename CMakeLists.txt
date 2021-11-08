@@ -1,29 +1,40 @@
 cmake_minimum_required(VERSION 3.10)
 
-message(STATUS "operation system is "${CMAKE_SYSTEM})
+
+project(Media_Network)
 
 if(WIN32)
     message(STATUS "Buile for Windows")
     set(CMAKE_C_COMPILER "gcc")
     set(CMAKE_CXX_COMPILER "g++")
 
+#    set(CMAKE_C_FLAGS "-Umain")
 #    include(${CMAKE_SOURCE_DIR}/lib/SLD2/lib/cmake/SDL2/sdl2-config.cmake)
 
     set(SDL2_DIR E:/program/media_-network/lib/SLD2)
     include_directories(${SDL2_DIR}/include)
+    include_directories(src/win_media_video)
+
+    file(GLOB WIN_MEDIA_SRC src/win_media_video/*.c src/win_media_video/*.h)
+
+    file(GLOB SRC src/media-main/src/*.c src/media-main/src/*.h)
 
     link_directories(${SDL2_DIR}/bin)
+
+    find_library(SDL2_LIB SDL2 lib/SDL2/bin NO_DEFAULT_PATH)
+
+    message(STATUS ${SDL2_LIB})
+    message(STATUS ${SDL2_DIR})
 elseif(UNIX)
     message(STATUS "Build for Unix")
     
     
 endif()
 
-project(Media_Network)
 
 
-file(GLOB SRC src/media-main/src/*.c src/media-main/src/*.h)
 
-add_executable(${PROJECT_NAME} ${SRC})
 
-target_link_libraries(${PROJECT_NAME} mingw32 SDL2)
+add_executable(${PROJECT_NAME} ${SRC} ${WIN_MEDIA_SRC})
+
+target_link_libraries(${PROJECT_NAME} mingw32 SDL2_LIB)
