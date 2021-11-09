@@ -9,7 +9,7 @@ if(WIN32)
     set(CMAKE_CXX_COMPILER "g++")
 
 #    set(CMAKE_C_FLAGS "-Umain")
-#    include(${CMAKE_SOURCE_DIR}/lib/SLD2/lib/cmake/SDL2/sdl2-config.cmake)
+    include(${CMAKE_SOURCE_DIR}/lib/SLD2/lib/cmake/SDL2/sdl2-config.cmake)
 
     set(SDL2_DIR E:/program/media_-network/lib/SLD2)
     include_directories(${SDL2_DIR}/include)
@@ -19,13 +19,21 @@ if(WIN32)
 
     file(GLOB SRC src/media-main/src/*.c src/media-main/src/*.h)
 
-    link_directories(${SDL2_DIR}/bin)
+    link_directories(${SDL2_DIR}/lib)
 
-    find_library(SDL2_LIB SDL2 lib/SDL2/bin NO_DEFAULT_PATH)
+#    find_library(SDL2_LIB libSDL2 lib/SDL2/lib NO_DEFAULT_PATH)
 
     message(STATUS ${SDL2_LIB})
     message(STATUS ${SDL2_DIR})
+
+    add_executable(${PROJECT_NAME} ${SRC} ${WIN_MEDIA_SRC})
+
+
+    target_link_libraries(${PROJECT_NAME} mingw32 SDL2)
+
+
 elseif(UNIX)
+
     message(STATUS "Build for Unix")
     
     
@@ -34,7 +42,3 @@ endif()
 
 
 
-
-add_executable(${PROJECT_NAME} ${SRC} ${WIN_MEDIA_SRC})
-
-target_link_libraries(${PROJECT_NAME} mingw32 SDL2_LIB)

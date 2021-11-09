@@ -35,7 +35,7 @@ int win_media_window_show(int evnet){
 
     gScreenSurface = SDL_GetWindowSurface(gWindow);
 
-    gHello_word = SDL_LoadBMP("src/win_media_video/test.bmp");
+    gHello_word = SDL_LoadBMP("E:\\program\\media_-network\\src\\win_media_video\\test.bmp");
     if (gHello_word == NULL){
         printf("Load BMP error %s \n",SDL_GetError());
         return -1;
