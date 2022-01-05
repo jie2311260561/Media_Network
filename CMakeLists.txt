@@ -25,7 +25,7 @@ if(WIN32)
 
     message(STATUS ${SDL2_LIB})
     message(STATUS ${SDL2_DIR})
-
+    add_definitions(-DCOMPILE_WINDOWS_TEST)
     add_executable(${PROJECT_NAME} ${SRC} ${WIN_MEDIA_SRC})
 
 
@@ -35,7 +35,10 @@ if(WIN32)
 elseif(UNIX)
 
     message(STATUS "Build for Unix")
-    
+    set(CMAKE_C_COMPILER "gcc")
+    set(CMAKE_CXX_COMPILER "g++")
+
+    file(GLOB SRC src/media-main/src/*.c src/media-main/src/*.h)
     
 endif()
 
