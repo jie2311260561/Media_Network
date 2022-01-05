@@ -7,6 +7,7 @@ if(WIN32)
     message(STATUS "Buile for Windows")
     set(CMAKE_C_COMPILER "gcc")
     set(CMAKE_CXX_COMPILER "g++")
+    SET(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/build/install")
 
 #    set(CMAKE_C_FLAGS "-Umain")
     include(${CMAKE_SOURCE_DIR}/lib/SLD2/lib/cmake/SDL2/sdl2-config.cmake)
@@ -31,6 +32,9 @@ if(WIN32)
 
     target_link_libraries(${PROJECT_NAME} mingw32 SDL2)
 
+    install(TARGETS ${PROJECT_NAME} 
+            RUNTIME DESTINATION bin)
+    install (FILES ${SDL2_DIR}/bin/SDL2.dll DESTINATION bin)
 
 elseif(UNIX)
 
