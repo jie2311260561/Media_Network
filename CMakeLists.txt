@@ -38,6 +38,7 @@ elseif(UNIX)
     set(CMAKE_C_COMPILER "gcc")
     set(CMAKE_CXX_COMPILER "g++")
 
+    include_directories(src/my_rtsp)
     file(GLOB SRC src/media-main/src/*.c src/media-main/src/*.h)
 
     add_executable(${PROJECT_NAME} ${SRC})
