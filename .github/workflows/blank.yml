@@ -23,18 +23,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: build
+        uses: ashutoshvarma/action-cmake-build@master
         with:
-          ref: main
-          path: build
-      # Runs a single command using the runners shell
-      - name: Build binary file
-        run: cmake .
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: 
-          meke -j8
+          build-dir: ${{ runner.workspace }}/build
+          cc: gcc
+          cxx: g++
+          build-type: Release
+          install-build: false
+          parallel: 14
       - name: Store images
         uses: actions/upload-artifact@v2
         with: 
