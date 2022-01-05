@@ -1,0 +1,3 @@
+/home/jie/workspace/media_-network/build/CMakeFiles/rebuild_cache.dir
+/home/jie/workspace/media_-network/build/CMakeFiles/edit_cache.dir
+/home/jie/workspace/media_-network/build/CMakeFiles/Media_Network.dir
