@@ -24,14 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: build
-        uses: ashutoshvarma/action-cmake-build@master
         with:
-          build-dir: ${{ runner.workspace }}/build
-          cc: gcc
-          cxx: g++
-          build-type: Release
-          install-build: false
-          parallel: 14
+          run: cmake --build build/ -j$(nproc)
       - name: Store images
         uses: actions/upload-artifact@v2
         with: 
